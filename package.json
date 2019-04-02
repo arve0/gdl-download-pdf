@@ -1,0 +1,17 @@
+{
+  "name": "gdl-download-pdf",
+  "version": "1.0.0",
+  "description": "Downloads books in PDF-format from digitallibrary.io using RSS-feeds:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mkdirp": "^0.5.1",
+    "xml-js": "^1.6.11"
+  }
+}
