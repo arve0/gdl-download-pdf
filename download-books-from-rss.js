@@ -24,10 +24,15 @@ async function main(url) {
     for (const entry of feed.entry) {
         const pdfUrl = getDownloadLink(entry)
         const filename = getNormalizedFilename(entry)
+
+        if (fs.existsSync(filename)) {
+            continue
+        }
+
         console.log(`Downloading ${pdfUrl} to ${filename}`)
         const pdf = await axios.get(pdfUrl,  getPDFOptions)
 
-        mkdirp(path.dirname(filename))
+        mkdirp.sync(path.dirname(filename))
         fs.writeFileSync(filename, pdf.data)
     }
 
